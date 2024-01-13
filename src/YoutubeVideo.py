@@ -22,6 +22,7 @@ class YoutubeVideo:
             youtubeObject.download(filename=f'{ self.channelusername }.mp4', output_path=VIDEO_PATH_DIR, skip_existing=False)
         except Exception as e:
             LOGGER.error(f"Fail to download video '{ lastedvideo['videoId'] }' from chanel { self.channelusername } ",e)
+            return
         self.currentlastedvideoid = lastedvideo['videoId']
         LOGGER.success(f"Succesfully downloaded video '{ lastedvideo['videoId'] }' from chanel { self.channelusername }")
 
